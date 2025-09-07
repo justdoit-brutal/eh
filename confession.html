@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Typing Effect</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        background: linear-gradient(120deg, #000000, #0a0a0a);
+        font-family: 'Poppins', sans-serif;
+        color: #00ffff;
+        overflow-x: hidden;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .typing-container {
+        font-size: 2em;
+        line-height: 1.6;
+        backdrop-filter: blur(5px);
+        background: rgba(0,0,0,0.3);
+        padding: 30px 40px;
+        border-radius: 15px;
+        z-index: 2;
+        max-width: 800px;
+        width: 90%;
+        min-height: 120px;
+        position: relative;
+        margin-bottom: 30px;
+        text-align: left;
+    }
+
+    .typing-container p {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        width: 100%;
+        word-wrap: break-word;
+        margin-bottom: 1em;
+    }
+
+    .cursor {
+        display: inline-block;
+        background-color: #00ffff;
+        width: 3px;
+        margin-left: 3px;
+        animation: blink 0.7s infinite;
+        vertical-align: bottom;
+    }
+
+    @keyframes blink {
+        0%, 50%, 100% { opacity: 1; }
+        25%, 75% { opacity: 0; }
+    }
+
+    .petal {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: rgba(0, 255, 255, 0.2);
+        border-radius: 50%;
+        animation: floatPetal linear infinite;
+        pointer-events: none;
+    }
+
+    @keyframes floatPetal {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 0;
+        }
+        10% { opacity: 0.3; }
+        50% { opacity: 0.6; }
+        100% {
+            transform: translateY(-120vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    .redirect-button {
+        font-family: 'Poppins', sans-serif;
+        padding: 12px 30px;
+        font-size: 1.2em;
+        color: #00ffff;
+        background: rgba(0,0,0,0.3);
+        border: 2px solid #00ffff;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .redirect-button:hover {
+        background: rgba(0,255,255,0.2);
+        color: #000;
+        border-color: #00ffff;
+    }
+
+    @media (max-width: 600px) {
+        .typing-container { font-size: 1.2em; padding: 20px; }
+        .redirect-button { font-size: 1em; padding: 10px 20px; }
+    }
+</style>
+</head>
+<body>
+<div class="typing-container">
+    <p id="para1"></p>
+    <p id="para2"></p>
+    <p id="para3"></p>
+    <span class="cursor"></span>
+</div>
+<a href="flowers.html" class="redirect-button">Go to Flowers</a>
+
+<script>
+const paragraphs = [
+    "You know, nakakatuwa ka. nah fr, coz wdym you made me inlove with you for idk, 10 years. i know i told you this a multiple times saying na wala nako gusto sayo pero yk that feeling, like a piece of my childhood is still fighting for me to love you, wait, doesnt sound right. it literary fights for me ro marry you lol. thats actually crazy, no matter how i kept telling myself na, yoko na, tama na, its done na, wala na pagasa. a piece of me talaga fights. aba, grabi kana, legit im yk tired. last year, yun, tried to distance myself from you coz, yk. and yunah came. ion blame nor mad at her pero, i treated her the same way i had hoped to treat you when we got together or when i had my chance. extra care, extra everything lol. for a moment there, i said to myself to move on na, i was happy that yunah came. kasi kahit saglit natuwa ako, masaya ba. pero happiness dies sabi nga nila. Nung nag break kami, ewan, something snapped. yung lost all hope sa pagibig. even tho na nakwento ko sayo yung nangyari, i mean i wasnt even mad at that time, nakikivibe lang ako and i was crying for closure at that moment. All that joke about her yk, sakit me kasi i never wanted to say that, that was just my ego saying i gotta hold it in. siguro, i dont regret none cause at the end of the day, napasaya nyako. pero still, i wish i was able to give you that.",
+    "i realized at that time na yun nga, hindi na simple crush na hold ko sayo non. ewan ko nalang ano tawag nyo dun kasi secret na ano tawag ko dun. apaka awkward ko talaga pag dating sayo e, pero sa iba kay angas angas ko, tiklop na tiklop ako e. hays, bakit ko nga ba sinasabi sayo to? kasi yung little one inside of me won. not in a love way, pero won into forcing me to create a final goodbye. ths time, not as a friend, but an admirer. yk, gusto ko non gumawa ng robot. contents non? processor lang tas lcd screen at motors saka button. walang camera or microphone or something cause i know overthinker ka lol, baka isipin mo pic kita gamit nun lol, hindi ako ganon pero kinonsider ko parin yung fact nayun. ano nanaman gagawin ng robot kamo, confession lang, yun sana mag dedeliver non ng final goodbye kaso bigo, nandon na e, malapit na e, eh nawalan ng pera HAHAHAHAHHA di tuloy natuloy. after confession, it just loops on complementing you and stuff. buttons para ma replay mo yung message hahaha.. lcd para ay may mukha yung ano, tas pag mag sasalita, mag aapear doon in text form para di ka mahirapan. tas motors para sa random movement kasi para cute HAHAHHAHAHAHAHAHAHHA. yk back in grade 9, i always wanted to join photo journa and take stolen pics mo tas present ko WHAHAHHAHA pero syempre, with your consent. nag aabang lagi ako non sa terrace ng room namin e, kaso tuwing nakikita ka nabibigo ako huhu. na memesmerize, either naka tabingi na yung cam o nakalimutan ko na mag pic sa sobrang pag a-admire sayo lul. gusto ko non pakita sakanila mundo ko na may hidden beauty. one that is guarateed na laging manalo. tas ikaw magiging winning piece ko WAHHAHAHAHAHAHA ahshhash hhsh ahsah maangas padin ako ya.",
+    "shhhshahasha. nawawalan na talaga ako ng feelings sayo. kaya ko to ginawa kasi tingin ko di na aabot pag mag iipon pako para sa robot nayun kaya ni rush kona to kase nag fafade na talaga hahshaa. eto i mean it na. iloveyou, HUUUUUUUUUUUUUHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH anondaw. anyways, ayun lang, di ko na papahabain, dito nako mag tatapos haha. anyways, i wanna share this flower with you. this flower what made me try html+css a year ago kaso di ko naintindihan non kaya nag stick ako sa python non. then ngaun ko lang na try uli kaya pasensya na kung ganito design nito, medyo baguhan palang sa laguagw nato haha. anyways, press mo lang yung button, i wish you all the luck in the worldddd. never give up crushiecakes."
+];
+
+const paraElements = [
+    document.getElementById('para1'),
+    document.getElementById('para2'),
+    document.getElementById('para3')
+];
+
+let paraIndex = 0;
+let charIndex = 0;
+
+function typeParagraph() {
+    if (paraIndex >= paragraphs.length) return;
+
+    // Hide previous paragraph
+    if (paraIndex > 0) {
+        paraElements[paraIndex-1].style.opacity = 0.5;
+    }
+
+    const currentPara = paragraphs[paraIndex];
+    const currentElement = paraElements[paraIndex];
+    currentElement.innerHTML = '';
+    currentElement.style.opacity = 1;
+
+    function typeChar() {
+        if (charIndex < currentPara.length) {
+            currentElement.innerHTML += currentPara.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeChar, 20); // slightly faster for smoother mobile view
+        } else {
+            paraIndex++;
+            charIndex = 0;
+            setTimeout(typeParagraph, 800);
+        }
+    }
+
+    typeChar();
+}
+
+typeParagraph();
+
+// Petal creation
+function createPetal() {
+    const petal = document.createElement('div');
+    petal.classList.add('petal');
+    const size = Math.random() * 15 + 10;
+    petal.style.width = size + 'px';
+    petal.style.height = size + 'px';
+    petal.style.left = Math.random() * window.innerWidth + 'px';
+    petal.style.animationDuration = Math.random() * 10 + 8 + 's';
+    petal.style.background = `rgba(0, 255, 255, ${Math.random() * 0.3 + 0.1})`;
+    document.body.appendChild(petal);
+    setTimeout(() => petal.remove(), 18000);
+}
+
+setInterval(createPetal, 300);
+</script>
+</body>
+</html>
